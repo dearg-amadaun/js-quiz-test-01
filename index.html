@@ -13,7 +13,7 @@
     
     <h1>Basic Test Quiz program.</h1>
 
-    <form id="Quiz" name="quiz">
+    <form id="quiz" name="quiz">
         
         <p>Is this test question box working properly?</p>
             <input id="textbox" type="text" name="question1">
@@ -30,11 +30,15 @@
 
         <input id="button" type="button" value="Finish" onclick = "check();">
         
-        <div id = "after_submit">
-            <p id ="number_correct"></p>
-        </div>
+        
 
     </form>
+
+    <div id = "after_submit">
+        <p id="message"></p>
+        <p id ="number_correct"></p>
+        <img id="picture"> 
+    </div>
 
     
 <script src="assets/js/script.js"></script>

@@ -7,7 +7,7 @@ function check(){
 
 
     // question1 || = "yes" allows for spelling variables of yes i.e "YES, Yes, yEs, YES, etc..."
-    if (question1 || "yes") {
+    if (question1 == "yes") {
         correct++; 
     //correct ++ = "correct and adds 1 to the "correct" counter
     }
@@ -20,7 +20,27 @@ function check(){
         correct++;
     }
 
+    var messages = ["Great job!", "Almost there!", "Please try again!"];
+    var pictures = ["assets/images/correct.gif", "assets/images/some.gif", "assets/images/none.gif"];
+
+    var range;
+
+        if (correct < 1) {
+            range = 2;
+        }
+
+        if (correct > 0 && correct < 3) {
+            range = 1;
+        }
+
+        if (correct > 2) {
+            range = 0;
+        }
+
     document.getElementById("after_submit").style.visibility = "visible";
+
+    document.getElementById("message").innerHTML = messages[range];
     document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+    document.getElementById("picture").src = pictures[range];
 
 }
